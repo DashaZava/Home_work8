@@ -28,7 +28,7 @@ def get_birthdays_per_week(users):
         # Якщо день народження попадає на тиждень вперед, то додати користувача до відповідного дня
         if current_date <= birthday < next_week:
             day_name = birthday.strftime('%A')
-            if day_name == 'Saturday' or day_name == 'Sunday':
+           if day_name in ('Saturday', 'Sunday'):
                 birthdays_by_day['Monday'].append(user['name'])
             else:
                 birthdays_by_day[day_name].append(user['name'])
@@ -40,10 +40,10 @@ def get_birthdays_per_week(users):
 
 # Приклад тестового списку користувачів
 test_users = [
-    {'name': 'Bill', 'birthday': datetime(2023, 8, 28)},
-    {'name': 'Jill', 'birthday': datetime(2023, 8, 29)},
-    {'name': 'Kim', 'birthday': datetime(2023, 8, 30)},
-    {'name': 'Jan', 'birthday': datetime(2023, 9, 2)},
+    {'name': 'Polina', 'birthday': datetime(2019, 12, 26)},
+    {'name': 'Dasha', 'birthday': datetime(1994, 6, 12)},
+    {'name': 'Kira', 'birthday': datetime(1997, 4, 3)},
+    {'name': 'Olga', 'birthday': datetime(1976, 5, 29)},
 ]
 
 # Виклик функції з тестовим списком користувачів
